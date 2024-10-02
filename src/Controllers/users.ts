@@ -50,7 +50,7 @@ router.get('/users', verifyToken, async (req, res) => {
     });
 });
 
-router.post('/users', verifyToken, async (req, res) => {
+router.post('/users', async (req, res) => {
     const { email, name, username, password } = req.body;
     const hashedPassword = await generateHash(password);
     const user = await prisma.user.create({

@@ -4,11 +4,11 @@ Este repositorio de NOX Creation, posee una primera versión de un modelo para c
 
 Para ello es importante clonar este repositorio en su máquina:
 
-    git clone 
+    git clone git@github.com:NoxCreation/FastNOXAPI.git
 
 ## Qué puede hacer con FastNOXAPI
 
-Este repositorio constituye un molder para crear API de forma más rápida, no es un framework ni una library en específico. 
+Este repositorio constituye un modelo para crear API de forma más rápida, no es un framework ni una library en específico. 
 
 Se deben seguir estos pasos para poder utilizarlo:
 

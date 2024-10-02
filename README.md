@@ -6,6 +6,19 @@ Para ello es importante clonar este repositorio en su máquina:
 
     git clone 
 
+## Qué puede hacer con FastNOXAPI
+
+Este repositorio constituye un molder para crear API de forma más rápida, no es un framework ni una library en específico. 
+
+Se deben seguir estos pasos para poder utilizarlo:
+
+- Clonar el repositorio
+- Instalar las dependencias
+- Crear el .env con sus datos de conexión a BD (postgres en el ejemplo)
+- Crear la BD (apitest en el ejemplo)
+- Realizar la migración
+- Correr el servidor
+
 ## Instalar dependencias
 
 Utilice su gestor de dependencias favorito, acá utilizaremos a Yarn

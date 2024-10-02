@@ -1,0 +1,178 @@
+{
+    "/posts": {
+        "get": {
+            "tags": [
+                "Publicaciones"
+            ],
+            "summary": "Obtiene todas las publicaciones",
+            "responses": {
+                "200": {
+                    "description": "Lista todas las publicaciones"
+                },
+                "403": {
+                    "description": "Sin Autorización"
+                }
+            }
+        },
+        "post": {
+            "tags": [
+                "Publicaciones"
+            ],
+            "summary": "Crea una nueva publicación",
+            "requestBody": {
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "title": {
+                                    "type": "string",
+                                    "description": "Titulo del post"
+                                },
+                                "content": {
+                                    "type": "string",
+                                    "description": "Contenido del post"
+                                },
+                                "authorId": {
+                                    "type": "string",
+                                    "description": "Identificador del autor"
+                                }
+                            },
+                            "required": [
+                                "title",
+                                "content",
+                                "authorId"
+                            ]
+                        }
+                    }
+                }
+            },
+            "responses": {
+                "200": {
+                    "description": "Se crea una publicación sastisfactoriamente"
+                },
+                "403": {
+                    "description": "Sin Autorización"
+                }
+            }
+        }
+    },
+    "/posts/{id}": {
+        "delete": {
+            "tags": [
+                "Publicaciones"
+            ],
+            "summary": "Eliminar una publicacion",
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    },
+                    "description": "ID de la publicacion a eliminar"
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "Se ha eliminado la publicacion"
+                },
+                "403": {
+                    "description": "Sin Autorización"
+                }
+            }
+        },
+        "put": {
+            "tags": [
+                "Publicaciones"
+            ],
+            "summary": "Actualiza una publicacion",
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    },
+                    "description": "ID de la publicacion a eliminar"
+                }
+            ],
+            "requestBody": {
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "title": {
+                                    "type": "string",
+                                    "description": "Titulo del post"
+                                },
+                                "content": {
+                                    "type": "string",
+                                    "description": "Contenido del post"
+                                },
+                                "published": {
+                                    "type": "boolean",
+                                    "description": "Indica si se publica o no"
+                                }
+                            },
+                            "required": [
+                                "title",
+                                "content",
+                                "authorId"
+                            ]
+                        }
+                    }
+                }
+            },
+            "responses": {
+                "200": {
+                    "description": "Se ha publicado el usuario"
+                },
+                "403": {
+                    "description": "Sin Autorización"
+                }
+            }
+        }
+    },
+    "/posts/{postId}/categories/{categoryId}/": {
+        "post": {
+            "tags": [
+                "Publicaciones"
+            ],
+            "summary": "Asocia una categoria a una publicación",
+            "parameters": [
+                {
+                    "name": "postId",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    },
+                    "description": "ID de la publicacion a asociar"
+                },
+                {
+                    "name": "categoryId",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    },
+                    "description": "ID de la categoria a ser asociar"
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "Se ha asociado la categoria"
+                },
+                "403": {
+                    "description": "Sin Autorización"
+                }
+            }
+        }
+    }
+}

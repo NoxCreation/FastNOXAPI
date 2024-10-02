@@ -1,0 +1,1 @@
+{"root":["./src/index.ts","./src/swagger.ts","./src/controllers/auth.ts","./src/controllers/categories.ts","./src/controllers/posts.ts","./src/controllers/users.ts","./src/helpers/generatehash.ts","./src/middleware/verifyauth.ts","./src/types/categorytype.ts","./src/types/posttype.ts","./src/types/usertype.ts"],"version":"5.6.2"}

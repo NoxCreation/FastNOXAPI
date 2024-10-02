@@ -1,0 +1,147 @@
+{
+    "/users": {
+        "get": {
+            "tags": [
+                "Usuario"
+            ],
+            "summary": "Obtener todos los usuarios",
+            "responses": {
+                "200": {
+                    "description": "Lista todos los usuarios de forma paginada"
+                },
+                "403": {
+                    "description": "Sin Autorización"
+                }
+            }
+        },
+        "post": {
+            "tags": [
+                "Usuario"
+            ],
+            "summary": "Crear un nuevo usuario",
+            "requestBody": {
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "name": {
+                                    "type": "string",
+                                    "description": "Nombre del usuario"
+                                },
+                                "username": {
+                                    "type": "string",
+                                    "description": "Nombre de usuario"
+                                },
+                                "password": {
+                                    "type": "string",
+                                    "description": "Contraseña del usuario"
+                                },
+                                "email": {
+                                    "type": "string",
+                                    "description": "Correo electrónico del usuario"
+                                }
+                            },
+                            "required": [
+                                "name",
+                                "username",
+                                "password",
+                                "email"
+                            ]
+                        }
+                    }
+                }
+            },
+            "responses": {
+                "200": {
+                    "description": "Usuario creado con éxito"
+                },
+                "403": {
+                    "description": "Sin Autorización"
+                }
+            }
+        }
+    },
+    "/users/{id}": {
+        "delete": {
+            "tags": [
+                "Usuario"
+            ],
+            "summary": "Eliminar un usuario",
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    },
+                    "description": "ID del usuario a eliminar"
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "Se ha eliminado el usuario"
+                },
+                "403": {
+                    "description": "Sin Autorización"
+                }
+            }
+        },
+        "put": {
+            "tags": [
+                "Usuario"
+            ],
+            "summary": "Actualiza un usuario",
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    },
+                    "description": "ID del usuario a actualizar"
+                }
+            ],
+            "requestBody": {
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "name": {
+                                    "type": "string",
+                                    "description": "Nombre del usuario"
+                                },
+                                "username": {
+                                    "type": "string",
+                                    "description": "Username del usuario"
+                                },
+                                "email": {
+                                    "type": "string",
+                                    "description": "Correo del usuario"
+                                }
+                            },
+                            "required": [
+                                "name",
+                                "username",
+                                "email"
+                            ]
+                        }
+                    }
+                }
+            },
+            "responses": {
+                "200": {
+                    "description": "Se ha actualizado el usuario"
+                },
+                "403": {
+                    "description": "Sin Autorización"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,122 @@
+{
+    "/categories": {
+        "get": {
+            "tags": [
+                "Categorias"
+            ],
+            "summary": "Obtener todas las categorias",
+            "responses": {
+                "200": {
+                    "description": "Lista todas las categorias de forma paginada"
+                },
+                "403": {
+                    "description": "Sin Autorización"
+                }
+            }
+        },
+        "post": {
+            "tags": [
+                "Categorias"
+            ],
+            "summary": "Crear una nueva categoria",
+            "requestBody": {
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "name": {
+                                    "type": "string",
+                                    "description": "Nombre de la categoría"
+                                }
+                            },
+                            "required": [
+                                "name"
+                            ]
+                        }
+                    }
+                }
+            },
+            "responses": {
+                "200": {
+                    "description": "Categoria creada con éxito"
+                },
+                "403": {
+                    "description": "Sin Autorización"
+                }
+            }
+        }
+    },
+    "/categories/{id}": {
+        "delete": {
+            "tags": [
+                "Categorias"
+            ],
+            "summary": "Eliminar una categoria",
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    },
+                    "description": "ID de la categoria a eliminar"
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "Se ha eliminado la categoria"
+                },
+                "403": {
+                    "description": "Sin Autorización"
+                }
+            }
+        },
+        "put": {
+            "tags": [
+                "Categorias"
+            ],
+            "summary": "Actualiza una categoria",
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    },
+                    "description": "ID de la categoria a actualizar"
+                }
+            ],
+            "requestBody": {
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "name": {
+                                    "type": "string",
+                                    "description": "Nombre del usuario"
+                                }
+                            },
+                            "required": [
+                                "name"
+                            ]
+                        }
+                    }
+                }
+            },
+            "responses": {
+                "200": {
+                    "description": "Se ha actualizado la categoria"
+                },
+                "403": {
+                    "description": "Sin Autorización"
+                }
+            }
+        }
+    }
+}

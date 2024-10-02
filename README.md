@@ -1,5 +1,7 @@
 # API FAST NOX
 
+![alt text](/images/image2.jpeg)
+
 Este repositorio de NOX Creation, posee una primera versión de un modelo para construir API de forma rápida. Con esta podrás servir varias endpoints, enlazar con varios modelos de bases de datos y documentar la API en Swagguer.
 
 Para ello es importante clonar este repositorio en su máquina:
